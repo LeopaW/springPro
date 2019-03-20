@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--准备工作:导入aop(约束)命名空间-->
+    <!--1.配置目标对象-->
+        <bean name="userService" class="service.UserServiceImpl"></bean>
+    <!--2.配置通知对象-->
+        <bean name="myAdvice" class="d_springAop.MyAdvice"></bean>
+    <!--3.配置将通知织入目标对象-->
+        <aop:config>
+            <!--配置切入点
+                public void service.UserServiceImpl.save()
+                void service.UserServiceImpl.save()
+                * service.UserServiceImpl.save() 返回值任意
+                * service.UserServiceImpl.*     所有方法
+
+                * service.UserServiceImpl.*(...)  有参数也可以
+                * service.*ServiceImpl.*(...)  所有的service包下
+                * service..*ServiceImpl.*(...)  会找子包
+            -->
+            <aop:pointcut id="pc" expression="execution(* service.*ServiceImpl.*(..))"/>
+            <aop:aspect ref="myAdvice">
+                <!--指定明为before方法作为前置通知-->
+                <aop:before method="before" pointcut-ref="pc"/>
+                <!--后置-->
+                <aop:after-returning method="afterReturning" pointcut-ref="pc"></aop:after-returning>
+                <!--环绕通知-->
+                <aop:around method="around" pointcut-ref="pc"/>
+                <!--异常拦截通知-->
+                <aop:after-throwing method="afterException" pointcut-ref="pc"/>
+                <!--后置-->
+                <aop:after method="after" pointcut-ref="pc"/>
+            </aop:aspect>
+        </aop:config>
+
+</beans>

@@ -1,0 +1,35 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="springPro:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/springPro_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="springPro/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="springPro" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.3.18.RELEASE" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/SSM/spring-framework-3.0.2.RELEASE-dependencies/org.apache.commons/com.springsource.org.apache.commons.logging/1.1.1/com.springsource.org.apache.commons.logging-1.1.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/SSM/spring-framework-3.0.2.RELEASE-dependencies/org.apache.log4j/com.springsource.org.apache.log4j/1.2.15/com.springsource.org.apache.log4j-1.2.15.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/junit.jar" />
+          <element id="library" level="module" name="JUnit5.3" module-name="springPro" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/SSM/spring-framework-4.2.4.RELEASE/libs/spring-web-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/javaweb/struts-2.5.20/lib/commons-fileupload-1.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/javaweb/struts-2.5.20/lib/commons-io-2.6.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/javaweb/struts-2.5.20/lib/commons-lang3-3.8.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/javaweb/struts-2.5.20/lib/freemarker-2.3.28.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/javaweb/struts-2.5.20/lib/javassist-3.20.0-GA.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/javaweb/struts-2.5.20/lib/log4j-api-2.11.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/javaweb/struts-2.5.20/lib/ognl-3.1.21.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/javaweb/struts-2.5.20/lib/struts2-core-2.5.20.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/SSM/spring-framework-4.2.4.RELEASE/libs/spring-aop-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/SSM/spring-framework-4.2.4.RELEASE/libs/spring-test-4.2.4.RELEASE.jar" />
+          <element id="library" level="module" name="JUnit4" module-name="springPro" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/SSM/spring-framework-4.2.4.RELEASE/libs/spring-aspects-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/SSM/spring-framework-3.0.2.RELEASE-dependencies/org.aspectj/com.springsource.org.aspectj.weaver/1.6.8.RELEASE/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/Desktop/java开发所有jar包/SSM/spring-framework-3.0.2.RELEASE-dependencies/org.aopalliance/com.springsource.org.aopalliance/1.0.0/com.springsource.org.aopalliance-1.0.0.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

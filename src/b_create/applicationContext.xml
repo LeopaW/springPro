@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--创建方式1：空参构造创建-->
+    <!--scope属性：singleton(默认值):单例对象，被标识为单例的对象，在spring容器中只会存在一个实例
+                    prototype：多例原形，被标识为多例的对象，每次在获得才会创建，每次创建都是新的对象
+                    request:web环境下，对象与request生命周期一致。(不用)
+                    session:web环境下，对象与session生命周期一致。(不用)
+    -->
+    <bean name="user" class="bean.User"  init-method="init" destroy-method="destory"></bean>
+    <!--创建方式2：静态工厂创建
+        调用UserFactory的createUser方法创建名为user2的对象，放入容器。
+    -->
+    <bean name="user2" class="b_create.UserFactory" factory-method="createUser"></bean>
+
+    <!--创建方式3：实例工厂创建
+        调用UserFactory对象的createUser2方法创建名为user3的对象，放入容器
+    -->
+    <bean name="user3" factory-bean="userFactory" factory-method="createUser2"></bean>
+    <bean name="userFactory" class="b_create.UserFactory"></bean>
+</beans>

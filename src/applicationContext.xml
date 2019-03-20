@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--指定扫描bean包下的所有类中的注解，子包也会扫描-->
+    <context:component-scan base-package="bean"></context:component-scan>
+
+    <bean name="car3" class="bean.Car2">
+        <property name="name" value="布加迪威龙"></property>
+        <property name="color" value="black"></property>
+    </bean>
+
+    <!--====================================================================-->
+    <!--将User对象交给spring容器管理-->
+    <!--Bean元素：使用该元素描述需要spring容器管理的对象
+        name属性：给被管理的对象起个名字，获得对象时根据该名称获得对象。
+                可以重复，可以使用特殊字符。
+        class属性：被管理对象的完整类名。
+        id属性：与name属性一模一样。
+                名称不可重复，不能使用特殊字符。
+        结论：尽量使用name属性。
+    -->
+    <bean name="user" class="bean.User"></bean>
+
+    <!--导入其他spring配置文件-->
+    <!--<import resource="applicationContext.xml"/>-->
+
+</beans>
